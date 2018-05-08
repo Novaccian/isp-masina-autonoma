@@ -1,5 +1,7 @@
 package masina;
 
+import java.util.ArrayList;
+
 public class Masina {
 	private String model;
 	private int nrUsi;
@@ -7,6 +9,7 @@ public class Masina {
 	private TipCombustibil tip;
 	private StareMasina stareCurenta;
 	private Ruta traseu;
+	private ArrayList<Persoana> pasageri;
 
 	public Masina(String model, int nrUsi, String numar, TipCombustibil tip, StareMasina stareCurenta) {
 		this.model = model;
@@ -18,6 +21,15 @@ public class Masina {
 	
 	public Masina() {
 		this("", 4, "12345", TipCombustibil.benzina, StareMasina.oprita);
+	}
+	
+	public void adaugaPasager(Persoana p) {
+		if(pasageri.size() <= 5) {
+			pasageri.add(p);
+		}
+		else {
+			System.out.println("Pare rau, nu mai este loc in masina");
+		}
 	}
 	
 	public void pornesteMotor() {
