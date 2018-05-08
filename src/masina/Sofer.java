@@ -6,7 +6,20 @@ public class Sofer extends Persoana{
 	private int dataExpirarePermis;
 	private Masina masina;
 	
-	public void seteazaDestinatie(String destinatie) {
+	public void seteazaDestinatie() {
+		System.out.println("Introdu adresa de destinatie: ");
+		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+		String adresa = new String(in.readLine());
+		
+		//se calculeaza rute
+		
+		System.out.println("Alegeti ruta:");
+		System.out.println("1) Lorem ipsos dolor sit amet");
+		System.out.println("2) Consectetur etcaetera si asa mai departe");
+		
+		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+		String optiune = new String(in.readLine());
+		
 		masina.setTraseu(new Ruta(destinatie));
 	}
 	
