@@ -1,3 +1,4 @@
+
 package masina;
 
 import java.io.BufferedReader;
@@ -9,6 +10,7 @@ public class Sofer extends Persoana{
 	private String tipPermis;
 	private int dataExpirarePermis;
 	private Masina masina;
+	private boolean conditiiOprire = true;
 	
 	public void seteazaDestinatie() {
 		System.out.println("Introdu adresa de destinatie: ");
@@ -63,14 +65,20 @@ public class Sofer extends Persoana{
 		
 	}
 	
+	public void schimbareConditii(int ok) {
+		if(ok == 0)
+			conditiiOprire = false;
+		else if(ok == 1)
+			conditiiOprire = true;
+	}
+	
 	public void oprireUrgenta() {
-		if(masina.validare(StareMasina.opritaDeUrgenta)) {
+		if(masina.validare(StareMasina.opritaDeUrgenta) && conditiiOprire == true) {
 			masina.setStareCurenta(StareMasina.opritaDeUrgenta);
 			System.out.println("Masina a fost oprita de urgenta");
 		}
 		else {
 			System.out.println("Masina nu se poate opri de urgenta");
-			
 		}
 	}
 	
@@ -120,7 +128,5 @@ public class Sofer extends Persoana{
 	public void setDataExpirarePermis(int dataExpirarePermis) {
 		this.dataExpirarePermis = dataExpirarePermis;
 	}
-	
-	
 	
 }
