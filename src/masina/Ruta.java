@@ -2,20 +2,16 @@ package masina;
 
 public class Ruta {
 	private String destinatie;
-	int kilometri;
+	private int kilometri;
 	
-	public Ruta(String destinatie, int kilometri) {
+	public Ruta(String destinatie) {
 		this.destinatie = destinatie;
-		this.kilometri = kilometri;
-	}
-	
-	public Ruta() {
-		this("", 0);
+		this.kilometri = this.calculeazaDist();
 	}
 	
 	public int calculeazaDist() {
 		//TODO
-		return 0;
+		return 90;
 	}
 
 	public String getDestinatie() {
@@ -29,8 +25,5 @@ public class Ruta {
 	public int getKilometri() {
 		return kilometri;
 	}
-
-	public void setKilometri(int kilometri) {
-		this.kilometri = kilometri;
-	}
+	
 }
