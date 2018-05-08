@@ -1,5 +1,9 @@
 package masina;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
 public class Sofer extends Persoana{
 	private int numarPermis;
 	private String tipPermis;
@@ -9,7 +13,13 @@ public class Sofer extends Persoana{
 	public void seteazaDestinatie() {
 		System.out.println("Introdu adresa de destinatie: ");
 		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
-		String adresa = new String(in.readLine());
+		String adresa = null;
+		try {
+			adresa = new String(in.readLine());
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 		//se calculeaza rute
 		
@@ -17,9 +27,15 @@ public class Sofer extends Persoana{
 		System.out.println("1) Lorem ipsos dolor sit amet");
 		System.out.println("2) Consectetur etcaetera si asa mai departe");
 		
-		String optiune = new String(in.readLine());
+		String optiune = null;
+		try {
+			optiune = new String(in.readLine());
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
-		masina.setTraseu(new Ruta(destinatie));
+		masina.setTraseu(new Ruta(adresa));
 	}
 	
 	public void preiaControlul() {
@@ -59,13 +75,17 @@ public class Sofer extends Persoana{
 	}
 	
 	public void pleaca(){
-		if(masina.validare(StareMasina.inDeplasare)) {
-			masina.setStareCurenta(StareMasina.inDeplasare);
-			System.out.println("Masina a plecat la destinatie");
+		if(masina.getTraseu() != null) {
+			if(masina.getProcentRezervor() > 10 && masina.getService().compareTo("functionala") == 0) {
+				if(masina.validare(StareMasina.inDeplasare)) {
+					masina.setStareCurenta(StareMasina.inDeplasare);
+					System.out.println("Masina a plecat la destinatie");
+				}
+				else System.out.println("Masina nu poate pleca.");
+			}
+			else System.out.println("Masina nu poate pleca.");
 		}
-		else {
-			System.out.println("Masina nu poate pleca.");
-		}
+		else seteazaDestinatie();
 	}
 	
 	
