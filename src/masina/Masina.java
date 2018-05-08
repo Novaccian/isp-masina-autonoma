@@ -6,7 +6,7 @@ public class Masina {
 	private String numar;
 	private TipCombustibil tip;
 	private StareMasina stareCurenta;
-	
+	private Ruta traseu;
 
 	public Masina(String model, int nrUsi, String numar, TipCombustibil tip, StareMasina stareCurenta) {
 		this.model = model;
@@ -66,6 +66,14 @@ public class Masina {
 
 	public void setStareCurenta(StareMasina stareCurenta) {
 		this.stareCurenta = stareCurenta;
+	}
+	
+	public Ruta getTraseu() {
+		return traseu;
+	}
+
+	public void setTraseu(Ruta traseu) {
+		this.traseu = traseu;
 	}
 	
 	public boolean validare(StareMasina stareUrmatoare) {
