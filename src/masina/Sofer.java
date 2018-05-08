@@ -17,7 +17,6 @@ public class Sofer extends Persoana{
 		System.out.println("1) Lorem ipsos dolor sit amet");
 		System.out.println("2) Consectetur etcaetera si asa mai departe");
 		
-		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
 		String optiune = new String(in.readLine());
 		
 		masina.setTraseu(new Ruta(destinatie));
