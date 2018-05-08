@@ -21,11 +21,23 @@ public class Masina {
 	}
 	
 	public void pornesteMotor() {
-		//TODO
+		if(validare(StareMasina.pornita)) {
+			setStareCurenta(StareMasina.pornita);
+			System.out.println("Masina a fost pornita");
+		}
+		else {
+			System.out.println("Masina nu poate fi pornita");
+		}
 	}
 	
 	public void opresteMotor() {
-		//TODO
+		if(validare(StareMasina.oprita)) {
+			setStareCurenta(StareMasina.oprita);
+			System.out.println("Masina a fost oprita");
+		}
+		else {
+			System.out.println("Masina nu poate fi oprita");
+		}
 	}
 
 	public String getModel() {
