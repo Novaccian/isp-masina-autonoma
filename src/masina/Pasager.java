@@ -16,6 +16,14 @@ public class Pasager extends Persoana{
 		this.loc = loc;
 	}
 	
+	public void deschideGeam() {
+		System.out.println("Geamul de pe locul " + loc + " a fost deschis.");
+	}
+	
+	public void incalzireScaun() {
+		System.out.println("Incalzirea scaunului incepe pe locul " + loc);
+	}
+	
 
 
 }
