@@ -68,5 +68,46 @@ public class Masina {
 		this.stareCurenta = stareCurenta;
 	}
 	
-	
+	public boolean validare(StareMasina stareUrmatoare) {
+		switch(stareCurenta) {
+		case oprita:
+			if(stareUrmatoare == StareMasina.pornita)
+				return true;
+			else
+				return false;
+		case pornita:
+			if(stareUrmatoare == StareMasina.gataDePlecare)
+				return true;
+			else
+				return false;
+		case gataDePlecare:
+			if(stareUrmatoare == StareMasina.inDeplasare)
+				return true;
+			else
+				return false;
+		case inDeplasare:
+			if(stareUrmatoare == StareMasina.ajunsaLaDestinatie ||
+			   stareUrmatoare == StareMasina.stationata)
+				return true;
+			else
+				return false;
+		case ajunsaLaDestinatie:
+			if(stareUrmatoare == StareMasina.pornita)
+				return true;
+			else
+				return false;
+		case opritaDeUrgenta:
+			if(stareUrmatoare == StareMasina.pornita)
+				return true;
+			else
+				return false;
+		case stationata:
+			if(stareUrmatoare == StareMasina.inDeplasare)
+				return true;
+			else
+				return false;
+		default:
+				return false;
+		}
+	}
 }
