@@ -8,6 +8,8 @@ public class Masina {
 	private String numar;
 	private TipCombustibil tip;
 	private StareMasina stareCurenta;
+	private String service;
+	private int procentRezervor;
 	private Ruta traseu;
 	private ArrayList<Persoana> pasageri;
 
@@ -17,6 +19,9 @@ public class Masina {
 		this.numar = numar;
 		this.tip = tip;
 		this.stareCurenta = stareCurenta;
+		this.traseu = null;
+		this.service = new String("functionala");
+		this.procentRezervor = 100;
 	}
 	
 	public Masina() {
@@ -100,6 +105,24 @@ public class Masina {
 		this.traseu = traseu;
 	}
 	
+	
+	
+	public String getService() {
+		return service;
+	}
+
+	public void setService(String service) {
+		this.service = service;
+	}
+
+	public int getProcentRezervor() {
+		return procentRezervor;
+	}
+
+	public void setProcentRezervor(int procentRezervor) {
+		this.procentRezervor = procentRezervor;
+	}
+
 	public boolean validare(StareMasina stareUrmatoare) {
 		switch(stareCurenta) {
 		case oprita:
