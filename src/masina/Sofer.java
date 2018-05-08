@@ -89,11 +89,12 @@ public class Sofer extends Persoana{
 	}
 	
 	
-	public Sofer(String nume, int numarPermis, String tipPermis, int dataExpirarePermis) {
+	public Sofer(String nume, int numarPermis, String tipPermis, int dataExpirarePermis, Masina m) {
 		super(nume);
 		this.numarPermis = numarPermis;
 		this.tipPermis = tipPermis;
 		this.dataExpirarePermis = dataExpirarePermis;
+		this.masina = m;
 	}
 	
 	public int getNumarPermis() {
